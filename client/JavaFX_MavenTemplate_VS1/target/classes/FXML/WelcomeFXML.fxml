@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" styleClass="border" fx:controller = "WelcomeController"
+			fx:id = "root">
+    
+    <top>
+        <fx:include fx:id = "options" source = "OptionsFXML.fxml" />
+    </top>
+
+    <center><VBox styleClass = "vBox" alignment = "CENTER" BorderPane.alignment = "CENTER" spacing = "10">
+	    <Label fx:id = "welcomeLabel1" text = "Welcome to"/>
+        <Label fx:id = "welcomeLabel2" text = "Three Card Poker"/>
+
+        <HBox alignment = "CENTER" spacing = "10">
+            <VBox alignment = "CENTER">
+                <Label fx:id = "portLabel" text = "Port Number"/>
+                <TextField fx:id = "portText" text = "" />
+            </VBox>
+
+            <VBox alignment = "CENTER">
+                <Label fx:id = "ipLabel" text = "IP Address"/>
+                <TextField fx:id = "ipText" text = "" />
+            </VBox>
+        </HBox>
+        <Button fx:id = "connectButton" text = "Connect" onAction = "#connectEvent"/>
+    </VBox></center>
+	
+</BorderPane>
