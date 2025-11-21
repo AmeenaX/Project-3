@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" styleClass="border"
+			fx:id = "root">
+
+    <center><VBox styleClass = "vBox" alignment = "CENTER" BorderPane.alignment = "CENTER" spacing = "10">
+        <Label fx:id = "bye" text = "Good bye"/>
+    </VBox></center>
+	
+</BorderPane>

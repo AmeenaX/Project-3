@@ -37,22 +37,25 @@ public class OptionsController implements Initializable {
 
     }
 
-    // action for Fresh Start
+    // used to show certain option
+    ShowOptions showThis = new ShowOptions();
+
+    // action for Exit
     @FXML
     public void exitEvent(ActionEvent event){
-        // reset winnings to 0
-        // start new game
+        showThis.showOption("/FXML/ExitFXML.fxml", "You have left Three Card Poker...");
     }
 
     // action for How to Play
     @FXML
     public void howToPlayEvent(ActionEvent event){
-        // display how to play
+        showThis.showOption("/FXML/RulesFXML.fxml", "Three Card Poker Rules");
     }
 
     // action for New Look / Old Look
     @FXML
     public void looksEvent(ActionEvent event){
+        // change text of menu item to opposite
         if(changeLookItem.getText().equals("New Look")){
             changeLookItem.setText("Old Look");
         }
@@ -62,11 +65,11 @@ public class OptionsController implements Initializable {
         
     }
 
-    // action for How to Play
+    // action for Fresh Start
     @FXML
     public void freshStartEvent(ActionEvent event){
         
-        // display how to play
+        //restart game to original
     }
 
 
