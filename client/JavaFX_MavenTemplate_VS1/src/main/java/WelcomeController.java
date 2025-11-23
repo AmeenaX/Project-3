@@ -8,10 +8,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 //import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.event.EventHandler;
 import javafx.scene.control.Label;
@@ -44,9 +46,6 @@ public class WelcomeController implements Initializable {
     @FXML
     private Button connectButton;
 
-    @FXML
-    public OptionsController optionsController;
-
     // store user portNumber
     int portNum;
 
@@ -56,20 +55,21 @@ public class WelcomeController implements Initializable {
 	
 	@Override
     public void initialize(URL location, ResourceBundle resources){
-
+		connectButton.setText("Connect");
     }
-
-
 
     // action for connect button
-    public void connectEvent(){
-        connectButton.setOnAction(e -> {
-            // try to connect to server
-            // give warning for invalid inputs
-            // change to game scene
-            
-        });
-    }
-
-
+	public void showGamePlay(ActionEvent Event) {
+		 try {
+	            Parent root = FXMLLoader.load(getClass().getResource("/FXML/GamePlayFXML.fxml"));
+	            Scene GamePlayScene = new Scene(root, 900,900);
+	            GamePlayScene.getStylesheets().add("/Styles/style1.css");
+	            Stage stage = (Stage) connectButton.getScene().getWindow();
+	            stage.setScene(GamePlayScene);
+	         
+	        } catch(Exception e) {
+	            e.printStackTrace();
+	            System.exit(1);
+	        }
+	} 
 }

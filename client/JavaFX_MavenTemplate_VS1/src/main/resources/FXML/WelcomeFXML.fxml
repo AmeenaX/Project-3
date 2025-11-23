@@ -10,11 +10,6 @@
 
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" styleClass="border" fx:controller = "WelcomeController"
 			fx:id = "root">
-    
-    <top>
-        <fx:include fx:id = "options" source = "OptionsFXML.fxml" />
-    </top>
-
     <center><VBox styleClass = "vBox" alignment = "CENTER" BorderPane.alignment = "CENTER" spacing = "10">
 	    <Label fx:id = "welcomeLabel1" text = "Welcome to"/>
         <Label fx:id = "welcomeLabel2" text = "Three Card Poker"/>
@@ -30,7 +25,7 @@
                 <TextField fx:id = "ipText" text = "" />
             </VBox>
         </HBox>
-        <Button fx:id = "connectButton" text = "Connect" onAction = "#connectEvent"/>
+        <Button fx:id = "connectButton" onAction = "#showGamePlay"/>
     </VBox></center>
 	
 </BorderPane>

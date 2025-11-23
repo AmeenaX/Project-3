@@ -10,10 +10,95 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.event.EventHandler?>
+ 
 
 
 <BorderPane xmlns:fx="http://javafx.com/fxml/1"
-              fx:id = "root" styleClass="root" fx:controller = "GamePlay">
-	<!-- TODO Add Nodes -->
-	
+              fx:id = "root" styleClass="root" fx:controller = "GamePlayController">
+	<padding> <Insets top="30" right="30" bottom="30" left="30" /></padding>
+
+	<top>
+        <VBox spacing="10">
+            <HBox alignment="CENTER_LEFT">
+                  <fx:include fx:id = "options" source = "OptionsFXML.fxml" />
+             </HBox>
+
+             <VBox alignment="CENTER" spacing="10">
+                <Label fx:id="ThreeCardPokerHeader" />
+                <Label fx:id="GamePlayHeader" /> 
+             </VBox>
+        </VBox>
+    </top>
+    
+    <left>
+      
+        <VBox alignment="TOP_LEFT" spacing="150"> 
+
+            <VBox spacing="5">
+                <Label fx:id="Winnings" /> 
+                <Text fx:id="WinningsText"/>
+            </VBox>
+
+            <VBox spacing="5">
+                <Label fx:id="Status" />
+                <Text fx:id="StatusText" />
+            </VBox>
+            
+        </VBox>
+    </left>
+    
+    
+   <center>
+        <VBox alignment="CENTER" spacing="50">
+            
+            <VBox alignment="CENTER" spacing="5">
+                <HBox spacing="10" alignment="CENTER">
+                    <ImageView fitWidth="60" preserveRatio="true"><image><Image url="@../Image/BackOfCard.PNG" /></image></ImageView>
+                    <ImageView fitWidth="60" preserveRatio="true"><image><Image url="@../Image/BackOfCard.PNG" /></image></ImageView>
+                    <ImageView fitWidth="60" preserveRatio="true"><image><Image url="@../Image/BackOfCard.PNG" /></image></ImageView>
+                </HBox>
+                <Text fx:id="DealersHand" />
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="5">
+                <Text fx:id="PlayersHand" />
+                <HBox spacing="10" alignment="CENTER">
+                    <ImageView fitWidth="60" preserveRatio="true"><image><Image url="@../Image/BackOfCard.PNG" /></image></ImageView>
+                    <ImageView fitWidth="60" preserveRatio="true"><image><Image url="@../Image/BackOfCard.PNG" /></image></ImageView>
+                    <ImageView fitWidth="60" preserveRatio="true"><image><Image url="@../Image/BackOfCard.PNG" /></image></ImageView>
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="40" >
+        	<BorderPane.margin>
+                <Insets top="20" right="0" bottom="0" left="0" />
+            </BorderPane.margin>
+            
+            <Button fx:id="PlayButton" onAction="#PlayGame" />
+            <Button fx:id="FoldButton" onAction="#FoldGame" />
+            <Button fx:id="DealButton" onAction="#DealGame" />
+
+            <HBox spacing="15" alignment="CENTER">
+                <VBox spacing="5" alignment="CENTER">
+                    <Label fx:id="AnteLabel" />
+                    <TextField fx:id="AntePromptText" prefWidth="60" /> 
+                </VBox>
+                
+                <VBox spacing="5" alignment="CENTER">
+                    <Label fx:id="PairPlus" />
+                    <TextField fx:id="PairPlusPromptText" prefWidth="60" />
+                </VBox>
+                
+                <VBox spacing="5" alignment="CENTER">
+                    <Label fx:id="PlayWager" />
+                    <TextField fx:id="PlayWagerPromtText" prefWidth="60"/>
+                </VBox>
+            </HBox>
+        </HBox>
+    </bottom>
 </BorderPane>
